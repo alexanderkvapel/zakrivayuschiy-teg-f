@@ -12,6 +12,7 @@
   color: var(--text-color, #000);
   font-family: var(--main-font, Inter-Variable), sans-serif;
   font-size: var(--main-fs, 18px);
+  background-color: var(--bg-color);
   background-image: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
                     repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
                     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
@@ -152,26 +153,67 @@
 }
 
 .card__icon-button {
-  border: none;
+  border: var(--border-size, 2px) solid transparent;
   background-color: transparent;
+  transition: border-color 0.3s ease;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--border-color, #000);
 }
 
 .button {
+  position: relative;
   border: var(--border-size, 2px) solid var(--border-color, #000);
   padding: var(--button-padding-block, 15px) var(--button-padding-inline, 20px);
+  overflow: hidden;
   font-family: var(--accent-font, 'Press Start 2P');
   font-size: var(--button-fs, 14px);
   background-color: var(--button-color, #fff);
-  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--text-color, #000);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.button:hover::after {
+  transform: translateX(0);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--focus-color, #000);
 }
 
 .button__icon {
+  z-index: 1;
+  fill: var(--difference-text-color, #fff);
   block-size: var(--button-icon-size, 21px);
   inline-size: var(--button-icon-size, 21px);
+  mix-blend-mode: difference;
 }
 
 .button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--difference-text-color, #fff);
   line-height: 90%;
+  mix-blend-mode: difference;
 }
 
 .button--save {
@@ -204,6 +246,7 @@
 }
 
 .modal-save__icon {
+  fill: var(--text-color, #000);
   block-size: var(--button-icon-size, 39px);
   inline-size: var(--button-icon-size, 39px);
 }

@@ -30,7 +30,7 @@
   --header-gap: 20px;
   --card-content-gap: 24px;
   --card-texts-gap: 27px;
-  --card-buttons-gap: 12px;
+  --card-buttons-gap: 8px;
   --button-gap: 8px;
   --modal-save-gap-inline: 20px;
   --modal-save-gap-block: 30px;
@@ -39,10 +39,12 @@
 
   --bg-color: #fff;
   --text-color: #000;
+  --difference-text-color: #fff;
   --button-color: #fff;
   --border-color: #000;
   --text-stroke-color: #fff;
   --backdrop-color: rgba(0, 0, 0, 0.75);
+  --focus-color: #000;
 }
 
 .card__like-button {

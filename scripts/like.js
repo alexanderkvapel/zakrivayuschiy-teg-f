@@ -10,6 +10,9 @@
 const likeHeartArray = document.querySelectorAll('.like-icon');
 const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
+const buttonSave = document.querySelector('.button--save');
+const buttonClose = document.querySelector('.modal-save__button');
+const modalWindow = document.querySelector('.modal-save');
 
 iconButtonArray.forEach((iconButton, index) => {
   iconButton.onclick = () =>
@@ -38,3 +41,11 @@ function setButtonText(heart, button) {
     );
   }
 }
+
+buttonSave.addEventListener('click', function () {
+  modalWindow.showModal();
+})
+
+buttonClose.addEventListener('click', function () {
+  modalWindow.close();
+})
