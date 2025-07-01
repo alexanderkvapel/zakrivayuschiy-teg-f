@@ -1,16 +1,235 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
+/* 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
 
 .page {
+  padding-block: var(--page-padding-block, 100px);
+  color: var(--text-color, #000);
+  font-family: var(--main-font, Inter-Variable), sans-serif;
+  font-size: var(--main-fs, 18px);
+  background-image: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+                    repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+                    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-variation-settings: 'wght' var(--text-fw, 400);
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  inline-size: var(--content-wrapper-inline-size, clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem));
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--header-gap, 20px);
+  margin-block-end: var(--header-margin-block, 100px);
+  border: var(--border-size, 2px) solid var(--border-color, #000);
+  padding-block: var(--header-padding-block, clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem));
+  font-family: var(--accent-font, 'Press Start 2P'), monospace;
+  background-color: var(--bg-color, #fff);
+}
+
+.header__title {
+  font-size: var(--title-fs, clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem));
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-size: var(--subtitle-fs, clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem));
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.card {
+  margin-block-end: var(--cards-margin-block, 50px);
+  border: var(--border-size, 2px) solid var(--border-color, #000);
+  color: var(--text-color, #000);
+  background-color: var(--bg-color, #fff);
+}
+
+.card__title {
+  border-block-end: var(--border-size, 2px) solid var(--border-color, #000);
+  padding: var(--card-title-padding-block, 5px) var(--card-title-padding-inline, 10px);
+  font-size: inherit;
+  line-height: 123%;
+  font-variation-settings: 'wght' var(--title-fw, 400);
+}
+
+.card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.card__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.cards__item:nth-of-type(1) .card__image {
+  filter: blur(0.5rem);
+}
+
+.cards__item:nth-of-type(2) .card__image {
+  filter: saturate(0.7);
+}
+
+.cards__item:nth-of-type(3) .card__image {
+  filter: contrast(1.3) grayscale(1);
+}
+
+.cards__item:nth-of-type(4) .card__image {
+  filter: contrast(2);
+}
+
+.cards__item:nth-of-type(5) .card__image {
+  filter: sepia(0.7);
+}
+
+.cards__item:nth-of-type(6) .card__image {
+  filter: hue-rotate(215deg);
+}
+
+.cards__item:nth-of-type(7) .card__image {
+  filter: invert(1);
+}
+
+.cards__item:nth-of-type(8) .card__image {
+  filter: saturate(5) brightness(0.8) contrast(1.5);
+}
+
+.card__label {
+  position: absolute;
+  opacity: 0.5;
+  font-family: var(--accent-font, 'Press Start 2P'), monospace;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px var(--text-stroke-color, #fff),
+               -1px 1px var(--text-stroke-color, #fff),
+               1px -1px var(--text-stroke-color, #fff),
+               -1px -1px var(--text-stroke-color, #fff);
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  mix-blend-mode: hard-light;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-content-gap, 24px);
+  border-block-start: var(--border-size, 2px) solid var(--border-color, #000);
+  padding: var(--card-content-padding, 25px);
+}
+
+.card__texts-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-texts-gap, 27px);
+  line-height: 117%;
+}
+
+.card__buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--card-buttons-gap, 12px);
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+
+.button {
+  border: var(--border-size, 2px) solid var(--border-color, #000);
+  padding: var(--button-padding-block, 15px) var(--button-padding-inline, 20px);
+  font-family: var(--accent-font, 'Press Start 2P');
+  font-size: var(--button-fs, 14px);
+  background-color: var(--button-color, #fff);
+  cursor: pointer;
+}
+
+.button__icon {
+  block-size: var(--button-icon-size, 21px);
+  inline-size: var(--button-icon-size, 21px);
+}
+
+.button__text {
+  line-height: 90%;
+}
+
+.button--save {
+  display: flex;
+  align-items: center;
+  gap: var(--button-gap, 8px);
+  margin: 0 auto;
+}
+
+.modal-save[open] {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  gap: var(--modal-save-gap-block, 30px) var(--modal-save-gap-inline, 20px);
+  border: var(--border-size, 2px) solid var(--border-color, #000);
+  padding: var(--modal-save-padding-block, 30px) var(--modal-save-padding-inline, 30px);
+  background-color: var(--bg-color, #fff);
+  inline-size: var(--modal-save-inline-size, clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem));
+}
+
+.modal-save::backdrop {
+  background-color: var(--backdrop-color, rgba(0, 0, 0, 0.75));
+}
+
+.modal-save__text {
+  font-family: var(--accent-font, 'Press Start 2P');
+  font-size: var(--modal-save-fs, 14px);
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.modal-save__icon {
+  block-size: var(--button-icon-size, 39px);
+  inline-size: var(--button-icon-size, 39px);
+}
+
+.modal-save__button {
+  grid-column: 1 / 3;
+  font-size: var(--button-fs, 14px);
+  line-height: 90%;
+  text-transform: uppercase;
+}
+
+@supports ((text-stroke: 1px var(--text-stroke-color, #fff)) or (-webkit-text-stroke: 2px var(--text-stroke-color, #fff))) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
+    text-stroke: 1px var(--text-stroke-color, #fff);
+  }
+}
+
+@media (width <= 375px) {
+  
+  .content-wrapper {
+    inline-size: 100%;
+  }
+
+  .button {
+    flex-direction: column;
+  }
 }

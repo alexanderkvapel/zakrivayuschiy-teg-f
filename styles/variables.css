@@ -1,1 +1,64 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: Inter-Variable;
+  --accent-font: 'Press Start 2P';
+
+  --main-fs: 18px;
+  --title-fs: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --subtitle-fs: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --button-fs: 14px;
+  --modal-save-fs: 14px;
+
+  --title-fw: 700;
+  --text-fw: 400;
+
+  --content-wrapper-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --button-icon-size: 21px;
+  --modal-save-inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+
+  --page-padding-block: 100px;
+  --header-margin-block: 100px;
+  --header-padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  --cards-margin-block: 50px;
+  --card-title-padding-inline: 10px;
+  --card-title-padding-block: 5px;
+  --card-content-padding: 25px;
+  --button-padding-inline: 20px;
+  --button-padding-block: 15px;
+  --modal-save-padding-inline: 30px;
+  --modal-save-padding-block: 30px;
+
+  --header-gap: 20px;
+  --card-content-gap: 24px;
+  --card-texts-gap: 27px;
+  --card-buttons-gap: 12px;
+  --button-gap: 8px;
+  --modal-save-gap-inline: 20px;
+  --modal-save-gap-block: 30px;
+
+  --border-size: 2px;
+
+  --bg-color: #fff;
+  --text-color: #000;
+  --button-color: #fff;
+  --border-color: #000;
+  --text-stroke-color: #fff;
+  --backdrop-color: rgba(0, 0, 0, 0.75);
+}
+
+.card__like-button {
+  --button-padding-inline: 35px;
+  --button-padding-block: 10.5px;
+}
+
+.modal-save__icon {
+  --button-icon-size: 39px;
+}
+
+@media (width <= 375px) {
+
+  :root {
+    --button-icon-size: 28px;
+
+    --modal-save-padding-inline: 40px;
+  }
+}
