@@ -1,4 +1,4 @@
-@keyframes heart-scale {
+@keyframes scale-up {
   from {
     transform: scale(1);
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes sparks-show {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
