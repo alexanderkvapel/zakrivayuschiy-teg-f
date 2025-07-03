@@ -63,6 +63,10 @@
   --button-icon-size: 39px;
 }
 
+.modal-save__button {
+  --button-padding-block: 10.5px;
+}
+
 .like-icon:hover {
   --heart-core-color: #000;
   --heart-main-body-color: #000;

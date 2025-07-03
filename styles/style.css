@@ -30,18 +30,17 @@
   padding-block: var(--header-padding-block, clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem));
   font-family: var(--accent-font, 'Press Start 2P'), monospace;
   background-color: var(--bg-color, #fff);
+  text-transform: uppercase;
 }
 
 .header__title {
   font-size: var(--title-fs, clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem));
   line-height: 100%;
-  text-transform: uppercase;
 }
 
 .header__subtitle {
   font-size: var(--subtitle-fs, clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem));
   line-height: 100%;
-  text-transform: uppercase;
 }
 
 .card {
@@ -56,7 +55,7 @@
   padding: var(--card-title-padding-block, 5px) var(--card-title-padding-inline, 10px);
   font-size: inherit;
   line-height: 123%;
-  font-variation-settings: 'wght' var(--title-fw, 400);
+  font-variation-settings: 'wght' var(--title-fw, 700);
 }
 
 .card__image-wrapper {
@@ -72,35 +71,35 @@
   aspect-ratio: 1 / 1;
 }
 
-.card:nth-of-type(1) .card__image {
+.filter-blur {
   filter: blur(0.5rem);
 }
 
-.card:nth-of-type(2) .card__image {
+.filter-saturate {
   filter: saturate(0.7);
 }
 
-.card:nth-of-type(3) .card__image {
+.filter-grayscale-accent-black {
   filter: contrast(1.3) grayscale(1);
 }
 
-.card:nth-of-type(4) .card__image {
+.filter-contrast {
   filter: contrast(2);
 }
 
-.card:nth-of-type(5) .card__image {
+.filter-sepia {
   filter: sepia(0.7);
 }
 
-.card:nth-of-type(6) .card__image {
+.filter-hue-rotate {
   filter: hue-rotate(215deg);
 }
 
-.card:nth-of-type(7) .card__image {
+.filter-invert {
   filter: invert(1);
 }
 
-.card:nth-of-type(8) .card__image {
+.filter-contrast-saturation {
   filter: saturate(5) brightness(0.8) contrast(1.5);
 }
 
@@ -143,10 +142,10 @@
 }
 
 .card__icon-button {
-  border: var(--border-size, 2px) solid transparent;
+  border: none;
   background-color: transparent;
-  inline-size: 39px;
-  block-size: 37.6px;
+  inline-size: 35px;
+  block-size: 33.6px;
 }
 
 .card__icon-button:focus {
@@ -154,12 +153,11 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: var(--border-color, #000);
+  outline: var(--border-size, 2px) solid var(--border-color, #000)
 }
 
-.card__like-button .button__text {
-  display: block;
-  inline-size: 84px;
+.card__like-button {
+  min-inline-size: 130px;
 }
 
 .button {
@@ -215,8 +213,7 @@
   margin: 0 auto;
 }
 
-.modal-save[open] {
-  display: grid;
+.modal-save {
   grid-template-columns: min-content 1fr;
   align-items: center;
   gap: var(--modal-save-gap-block, 30px) var(--modal-save-gap-inline, 20px);
@@ -224,6 +221,10 @@
   padding: var(--modal-save-padding-block, 30px) var(--modal-save-padding-inline, 30px);
   background-color: var(--bg-color, #fff);
   inline-size: var(--modal-save-inline-size, clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem));
+}
+
+.modal-save[open] {
+  display: grid;
 }
 
 .modal-save::backdrop {
@@ -322,6 +323,11 @@
 
   .content-wrapper {
     inline-size: 100%;
+  }
+
+  .card__label {
+    inset-block-start: 22px;
+    inset-inline-end: 11px;
   }
 
   .button {
