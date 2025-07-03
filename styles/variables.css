@@ -45,15 +45,35 @@
   --text-stroke-color: #fff;
   --backdrop-color: rgba(0, 0, 0, 0.75);
   --focus-color: #000;
+  --heart-contour-color: #000;
+  --heart-main-body-color: transparent;
+  --heart-core-color: transparent;
+  --heart-sparks-color: #f00;
 }
 
 .card__like-button {
-  --button-padding-inline: 35px;
+  --button-padding-inline: 17px;
   --button-padding-block: 10.5px;
 }
 
 .modal-save__icon {
   --button-icon-size: 39px;
+}
+
+.like-icon:hover {
+  --heart-core-color: #000;
+  --heart-main-body-color: #000;
+}
+
+.like-icon:active {
+  --heart-core-color: #f00;
+  --heart-main-body-color: #f00;
+}
+
+.like-icon.is-liked {
+  --heart-contour-color: #f00;
+  --heart-main-body-color: #f00;
+  --heart-core-color: #f00;
 }
 
 @media (width <= 375px) {
