@@ -1,21 +1,12 @@
-/* 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-*/
-
 .page {
   padding-block: var(--page-padding-block, 100px);
   color: var(--text-color, #000);
   font-family: var(--main-font, Inter-Variable), sans-serif;
   font-size: var(--main-fs, 18px);
   background-color: var(--bg-color);
-  background-image: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
-                    repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
-                    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  background-image: repeating-linear-gradient(to right, var(--bg-grid-color, #d3d3d3) 0, var(--bg-grid-color, #d3d3d3) 2px, transparent 2px, transparent 4px),
+                    repeating-linear-gradient(to bottom, var(--bg-grid-color, #d3d3d3) 0, var(--bg-grid-color, #d3d3d3) 2px, transparent 2px, transparent 4px),
+                    linear-gradient(to bottom, var(--bg-gradient-color-start, #e7e7e7) 0.01%, var(--bg-gradient-color-end, #1a1a1a));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
